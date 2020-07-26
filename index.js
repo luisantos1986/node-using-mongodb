@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const routes = require('./src/routes/routes.js')
 
 const app = express();
 const PORT = 4000;
@@ -16,6 +17,9 @@ mongoose.connect('mongodb://localhost/productsdb', {
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); 
+
+// routes
+routes(app);
 
 app.get('/', (req, res) =>
     res.send(`Store server running on port ${PORT}`)
