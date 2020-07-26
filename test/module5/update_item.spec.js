@@ -8,7 +8,7 @@ describe('Updating a product', () => {
             .to.contain("Product.findOneAndUpdate({ _id: req.params.ProductID }, req.body, { new: true, useFindAndModify: false }, (err, Product)")
             done(); 
         } catch (error) {
-            done(new Error("No controllers for PUT endpoint detected"));
+            done(new Error("No routes for PUT endpoint detected: \n"+error));
         }
 
     })
@@ -19,7 +19,7 @@ describe('Updating a product', () => {
             .to.contain(".put(updateProduct)")
              done();
         } catch (error) {
-            done(new Error("No routes for PUT endpoint detected"));
+            done(new Error("No routes for PUT endpoint detected: \n"+error));
         }
     })
 });
