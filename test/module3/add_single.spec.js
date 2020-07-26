@@ -10,7 +10,7 @@ describe('Creating documents', () => {
                 .to.contain("const Schema = mongoose.Schema;")
             done();      
         } catch (error) {
-            done(new Error("No schema detected in your code"));
+            done(new Error("No schema detected in your code: "+error));
         }
     })
 

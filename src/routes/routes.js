@@ -1,11 +1,10 @@
-const { addNewProduct } = require('../controllers/controllers.js')
+const { addnewProduct } = require('../controllers/controllers.js')
 
 const routes = (app) => {
-    app.route('./products')
+    app.route('/products')
 
-    // POST endpoint
-
-    .post(addNewProduct)
+        // Post endpoint
+        .post(addnewProduct);
 }
 
 module.exports = routes;
